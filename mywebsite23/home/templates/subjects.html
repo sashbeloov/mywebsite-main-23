@@ -73,7 +73,7 @@ Rest, [25.12.2024 7:18]
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
           <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Our teacher</a></li>
-          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted">{{ subject.title }}</li>
         </ul>
         <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
       </div>
@@ -109,10 +109,12 @@ Rest, [25.12.2024 7:18]
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'images/teachers/teacher-3.jpg' %}" alt="teacher">
           <div class="card-body">
-            <a href="teacher-single.html">
+            <a href="{% url 'subjectdatail' sub.id sub.slug %}">
               <h4 class="card-title">{{ subjects.name }}</h4>
             </a>
+              <a href="{% url 'subjectdatail' sub.id sub.slug %}">link</a>
             <p>{{ subjects.description }}</p>
+
             <ul class="list-inline">
               <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
               <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>

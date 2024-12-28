@@ -81,3 +81,14 @@ def subjects(request):
     }
     return render(request, 'subjects.html', context)
 
+
+def subjectdatail(request,id,slug):
+    course = Subject.objects.all()
+    subject = Subject.objects.get(pk=id)
+    subject_cr = Subject.objects.all().order_by('id')[:4]
+    context = {
+        'subject': subject,
+        'course': course,
+        'subject_cr': subject_cr,
+    }
+    return render(request, 'subjectdatail.html', context)

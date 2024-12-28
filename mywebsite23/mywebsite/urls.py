@@ -34,6 +34,7 @@ urlpatterns = [
     path('tutors/', h_views.tutors, name='tutors'),
     path('students/', h_views.tutors, name='students'),
     path('subjects/', h_views.subjects, name='subjects'),
+    path('subject/<int:id>/<slug:slug>',h_views.subjectdatail, name='subjectdatail')
 ]
 
 if settings.DEBUG:
