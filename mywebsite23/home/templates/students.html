@@ -104,10 +104,10 @@ Rest, [25.12.2024 7:18]
     <!-- teacher list -->
     <div class="row" data-ref="mixitup-container">
       <!-- teacher -->
-        {% for tutor in students_cr %}
+        {% for students in students_cr %}
       <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 business-study">
         <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="{% static 'images/teachers/teacher-3.jpg' %}" alt="teacher">
+          <img class="card-img-top rounded-0" src="{{ students.image.url }}" alt="teacher">
           <div class="card-body">
             <a href="teacher-single.html">
               <h4 class="card-title">{{ students.name }}</h4>
