@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'active_link',
 ]
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,7 +54,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
+
 
 ROOT_URLCONF = 'mywebsite.urls'
 
@@ -108,6 +112,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
+
+LANGUAGES = [
+    ('ru','Russian'),
+    ('uz','Uzbek'),
+    ('en','English')
+]
+
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, '/home/locale'),
+)
+
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -119,6 +136,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+
+
+
 
 STATIC_URL = 'static/'
 
