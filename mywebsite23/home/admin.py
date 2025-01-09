@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Setting, ContactMessage
+from .models import Setting, ContactMessage, Language, SettingLang
 
 
 # Register your models here.
@@ -10,3 +10,8 @@ admin.site.register(Setting, SettigsAdmin)
 
 
 admin.site.register(ContactMessage)
+
+admin.site.register(SettingLang)
+
+admin.site.register(Language)
+

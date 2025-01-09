@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from course.models import Course, Subject, Tutor,Student
-from .models import Setting, ContactForm, ContactMessage
+from .models import Setting, ContactForm, ContactMessage, SettingLang
 
 
 # Create your views here.
@@ -19,6 +19,12 @@ def index(request):
     course_cr = Course.objects.all().order_by('id')[:4]
     subject_cr = Subject.objects.all().order_by('id')[:3]
     tutor_cr = Tutor.objects.all().order_by('id')[:3]
+    defaultlang = settings.LANGUAGE_CODE[0:2]
+    currentlang = request.LANGUAGE_CODE[0:2]
+
+    if defaultlang != currentlang:
+        setting = SettingLang.objects.get(lang=currentlang)
+
     context = {'setting':setting,
                'course_cr':course_cr,
                'subject_cr':subject_cr,
